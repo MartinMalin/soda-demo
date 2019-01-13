@@ -1,0 +1,45 @@
+:host {
+    display: inline-block;
+    box-sizing: border-box;
+    vertical-align: top;
+}
+
+.grid-asset-thumb {
+    height: 182px;
+    display: flex;
+    flex-direction: row;
+}
+
+.grid-asset-thumb__container {
+    border: 1px solid grey;
+    padding: 4px;
+    margin: 4px;
+    flex: 1;
+    position: relative;
+}
+
+.grid-asset-thumb__image {
+    max-width: 100%;
+    max-height: 130px;
+}
+
+.grid-asset-thumb__actions {
+    position: absolute;
+    bottom: 4px;
+    left: 4px;
+    height: 32px;
+    display: flex;
+    flex-direction: row;
+    margin-top: 4px;
+    flex: 1;
+}
+
+.grid-asset-thumb__actions .entry {
+    width: 24px;
+    height: 24px;
+    margin: 4px;
+}
+
+.grid-asset-thumb__actions .entry:hover {
+    fill: #47aaff !important;
+}

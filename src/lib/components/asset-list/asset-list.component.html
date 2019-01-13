@@ -1,0 +1,52 @@
+<ng-container *ngIf="layout === 'masonry-grid'">
+    <ng-container *ngIf="sortable">
+        <div #mainContainer class="mainContainer" [dragula]="dragulaId" [dragulaOptions]="dragulaOptions">
+            <ng-container *ngIf="assets.length">
+                <ng-container *ngFor="let asset of assets; let isFirst=first; let isLast=last;"><st-masonry-grid-asset-thumb [attr.data-assetId]="asset.id" [asset]="asset" [width]="asset.displayWidth" [height]="asset.displayHeight" [marginWidth]="asset.marginWidth" (detail)="showAssetDetail($event)" [lightboxId]="lightboxId"></st-masonry-grid-asset-thumb><st-asset-detail-placeholder *ngIf="showDetailId > 0 && asset.id == showDetailId" (close)="closeAssetDetail($event)"></st-asset-detail-placeholder></ng-container>
+            </ng-container>
+        </div>
+    </ng-container>
+    <ng-container *ngIf="!sortable">
+        <div #mainContainer class="mainContainer">
+            <ng-container *ngIf="assets.length">
+                <ng-container *ngFor="let asset of assets; let isFirst=first; let isLast=last;"><st-masonry-grid-asset-thumb [attr.data-assetId]="asset.id" [asset]="asset" [width]="asset.displayWidth" [height]="asset.displayHeight" [marginWidth]="asset.marginWidth" (detail)="showAssetDetail($event)" [lightboxId]="lightboxId"></st-masonry-grid-asset-thumb><st-asset-detail-placeholder *ngIf="showDetailId > 0 && asset.id == showDetailId" (close)="closeAssetDetail($event)"></st-asset-detail-placeholder></ng-container>
+            </ng-container>
+        </div>
+    </ng-container>
+</ng-container>
+<ng-container *ngIf="layout === 'grid'">
+    <ng-container *ngIf="sortable">
+        <div #mainContainer class="mainContainer" [dragula]="dragulaId" [dragulaOptions]="dragulaOptions">
+            <ng-container *ngIf="assets.length">
+                <ng-container *ngFor="let asset of assets; let isFirst=first; let isLast=last;"><st-grid-asset-thumb [attr.data-assetId]="asset.id" [asset]="asset" [gridItemWidth]="gridItemWidth" (detail)="showAssetDetail($event)" [lightboxId]="lightboxId"></st-grid-asset-thumb><st-asset-detail-placeholder *ngIf="showDetailId > 0 && asset.id == showDetailId" (close)="closeAssetDetail($event)"></st-asset-detail-placeholder></ng-container>
+            </ng-container>
+        </div>
+    </ng-container>
+    <ng-container *ngIf="!sortable">
+        <div #mainContainer class="mainContainer">
+            <ng-container *ngIf="assets.length">
+                <ng-container *ngFor="let asset of assets; let isFirst=first; let isLast=last;"><st-grid-asset-thumb [attr.data-assetId]="asset.id" [asset]="asset" [gridItemWidth]="gridItemWidth" (detail)="showAssetDetail($event)" [lightboxId]="lightboxId"></st-grid-asset-thumb><st-asset-detail-placeholder *ngIf="showDetailId > 0 && asset.id == showDetailId" (close)="closeAssetDetail($event)"></st-asset-detail-placeholder></ng-container>
+            </ng-container>
+        </div>
+    </ng-container>
+</ng-container>
+<ng-container *ngIf="layout === 'list'">
+    <ng-container *ngIf="sortable">
+        <div #mainContainer class="mainContainer grid-list" [dragula]="dragulaId" [dragulaOptions]="dragulaOptions">
+            <ng-container *ngIf="assets.length">
+                <ng-container *ngFor="let asset of assets; let isFirst=first; let isLast=last;">
+                    <st-list-asset-thumb [attr.data-assetId]="asset.id" [asset]="asset" (detail)="showAssetDetail($event)" [lightboxId]="lightboxId">
+                    </st-list-asset-thumb>
+                    <st-asset-detail-placeholder *ngIf="showDetailId > 0 && asset.id == showDetailId" (close)="closeAssetDetail($event)"></st-asset-detail-placeholder>
+                </ng-container>
+            </ng-container>
+        </div>
+    </ng-container>
+    <ng-container *ngIf="!sortable">
+        <div #mainContainer class="mainContainer grid-list">
+            <ng-container *ngIf="assets.length">
+                <ng-container *ngFor="let asset of assets; let isFirst=first; let isLast=last;"><st-list-asset-thumb [attr.data-assetId]="asset.id" [asset]="asset" (detail)="showAssetDetail($event)" [lightboxId]="lightboxId"></st-list-asset-thumb><st-asset-detail-placeholder *ngIf="showDetailId > 0 && asset.id == showDetailId" (close)="closeAssetDetail($event)"></st-asset-detail-placeholder></ng-container>
+            </ng-container>
+        </div>
+    </ng-container>
+</ng-container>

@@ -1,0 +1,18 @@
+<st-asset-search class="search" (searchText)="searchText$.next($event)"></st-asset-search>
+
+<div
+    class="scroll-container"
+    infiniteScroll
+    [infiniteScrollDistance]="2"
+    [infiniteScrollThrottle]="50"
+    (scrolled)="onLoadMoreAssets()"
+>
+    <ul>
+        <ng-container *ngFor="let asset of assets">
+            <li><img [src]="asset.associatedMedia[1].contentUrl" /></li>
+        </ng-container>
+    </ul>
+</div>
+
+<mat-spinner *ngIf="dataLoading"  class="loading-assets" mode="determinate" [diameter]="30"></mat-spinner>
+

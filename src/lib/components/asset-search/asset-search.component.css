@@ -1,0 +1,10 @@
+svg.loading {
+    stroke: #555;
+    width: 3em;
+    height: 3em;
+    margin: 20px;
+}
+
+.loading-assets {
+    text-align: center;
+}

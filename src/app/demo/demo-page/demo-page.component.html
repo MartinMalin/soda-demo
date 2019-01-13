@@ -1,0 +1,8 @@
+<st-asset-search-input (searchText)="onSearchTextChanged($event)"></st-asset-search-input>
+<select [(ngModel)]="layout">
+    <option value="masonry-grid">Masonry Grid</option>
+    <option value="grid">Regular Grid</option>
+    <option value="list">List</option>
+
+</select>
+<st-asset-search [searchText]="searchText" [layout]="layout" [gridItemTargetWidth]="gridItemTargetWidth"></st-asset-search>

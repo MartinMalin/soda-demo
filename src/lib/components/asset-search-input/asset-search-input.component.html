@@ -1,0 +1,11 @@
+<div [formGroup]="form">
+    <mat-form-field>
+        <input #searchBox type="search" matInput class="search" placeholder="Search" formControlName="search"
+               (keyup)="checkSearch($event)" [matAutocomplete]="auto">
+    </mat-form-field>
+
+    <mat-autocomplete #auto="matAutocomplete">
+        <mat-option *ngFor="let option of options | async" [value]="option.value"
+                    [innerHTML]="option.text"></mat-option>
+    </mat-autocomplete>
+</div>
